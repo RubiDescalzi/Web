@@ -1,3 +1,6 @@
+
+/* Color a toda la pagina*/ 
+
 body {
     background-color: #330055;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 1000'%3E%3Cg %3E%3Ccircle fill='%23330055' cx='50' cy='0' r='50'/%3E%3Cg fill='%233e095b' %3E%3Ccircle cx='0' cy='50' r='50'/%3E%3Ccircle cx='100' cy='50' r='50'/%3E%3C/g%3E%3Ccircle fill='%23491362' cx='50' cy='100' r='50'/%3E%3Cg fill='%23541d68' %3E%3Ccircle cx='0' cy='150' r='50'/%3E%3Ccircle cx='100' cy='150' r='50'/%3E%3C/g%3E%3Ccircle fill='%235f266e' cx='50' cy='200' r='50'/%3E%3Cg fill='%23692f75' %3E%3Ccircle cx='0' cy='250' r='50'/%3E%3Ccircle cx='100' cy='250' r='50'/%3E%3C/g%3E%3Ccircle fill='%2374387c' cx='50' cy='300' r='50'/%3E%3Cg fill='%237e4282' %3E%3Ccircle cx='0' cy='350' r='50'/%3E%3Ccircle cx='100' cy='350' r='50'/%3E%3C/g%3E%3Ccircle fill='%23894b89' cx='50' cy='400' r='50'/%3E%3Cg fill='%23935590' %3E%3Ccircle cx='0' cy='450' r='50'/%3E%3Ccircle cx='100' cy='450' r='50'/%3E%3C/g%3E%3Ccircle fill='%239d5f97' cx='50' cy='500' r='50'/%3E%3Cg fill='%23a7699f' %3E%3Ccircle cx='0' cy='550' r='50'/%3E%3Ccircle cx='100' cy='550' r='50'/%3E%3C/g%3E%3Ccircle fill='%23b173a6' cx='50' cy='600' r='50'/%3E%3Cg fill='%23bb7dad' %3E%3Ccircle cx='0' cy='650' r='50'/%3E%3Ccircle cx='100' cy='650' r='50'/%3E%3C/g%3E%3Ccircle fill='%23c587b5' cx='50' cy='700' r='50'/%3E%3Cg fill='%23cf92bd' %3E%3Ccircle cx='0' cy='750' r='50'/%3E%3Ccircle cx='100' cy='750' r='50'/%3E%3C/g%3E%3Ccircle fill='%23d99cc5' cx='50' cy='800' r='50'/%3E%3Cg fill='%23e2a7cd' %3E%3Ccircle cx='0' cy='850' r='50'/%3E%3Ccircle cx='100' cy='850' r='50'/%3E%3C/g%3E%3Ccircle fill='%23ecb2d5' cx='50' cy='900' r='50'/%3E%3Cg fill='%23f5bddd' %3E%3Ccircle cx='0' cy='950' r='50'/%3E%3Ccircle cx='100' cy='950' r='50'/%3E%3C/g%3E%3Ccircle fill='%23FFC8E6' cx='50' cy='1000' r='50'/%3E%3C/g%3E%3C/svg%3E");
@@ -6,101 +9,69 @@ body {
     text-align: center;
 }
 
-/* From uiverse.io by @menezes11 */
+/* From uiverse.io by @ShadowShahriar */
 button {
+    --border-radius: 15px;
+    --border-width: 4px;
+    appearance: none;
     position: relative;
-    padding: 1em 1.8em;
-    outline: none;
-    border: 1px solid #303030;
-    background: #212121;
-    color: #ae00ff;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-size: 15px;
-    overflow: hidden;
-    transition: 0.2s;
-    border-radius: 20px;
-    cursor: pointer;
-    font-weight: bold;
+    padding: 1em 2em;
+    border: 0;
+    background-color: #212121;
+    font-family: "Roboto", Arial, "Segoe UI", sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
+    z-index: 2;
    }
    
-   button:hover {
-    box-shadow: 0 0 10px #ae00ff, 0 0 25px #001eff, 0 0 50px #ae00ff;
-    transition-delay: 0.6s;
-   }
-   
-   button span {
+   button::after {
+    --m-i: linear-gradient(#000, #000);
+    --m-o: content-box, padding-box;
+    content: "";
     position: absolute;
-   }
-   
-   button span:nth-child(1) {
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, #ae00ff);
-   }
-   
-   button:hover span:nth-child(1) {
-    left: 100%;
-    transition: 0.7s;
-   }
-   
-   button span:nth-child(3) {
-    bottom: 0;
-    right: -100%;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, #001eff);
-   }
-   
-   button:hover span:nth-child(3) {
-    right: 100%;
-    transition: 0.7s;
-    transition-delay: 0.35s;
-   }
-   
-   button span:nth-child(2) {
-    top: -100%;
-    right: 0;
-    width: 2px;
-    height: 100%;
-    background: linear-gradient(180deg, transparent, #ae00ff);
-   }
-   
-   button:hover span:nth-child(2) {
-    top: 100%;
-    transition: 0.7s;
-    transition-delay: 0.17s;
-   }
-   
-   button span:nth-child(4) {
-    bottom: -100%;
     left: 0;
-    width: 2px;
+    top: 0;
+    width: 100%;
     height: 100%;
-    background: linear-gradient(360deg, transparent, #001eff);
+    padding: var(--border-width);
+    border-radius: var(--border-radius);
+    background-image: conic-gradient(
+           #488cfb,
+           #29dbbc,
+           #ddf505,
+           #ff9f0e,
+           #e440bb,
+           #655adc,
+           #488cfb
+       );
+    -webkit-mask-image: var(--m-i), var(--m-i);
+    mask-image: var(--m-i), var(--m-i);
+    -webkit-mask-origin: var(--m-o);
+    mask-origin: var(--m-o);
+    -webkit-mask-clip: var(--m-o);
+    mask-composite: exclude;
+    -webkit-mask-composite: destination-out;
+    filter: hue-rotate(0);
+    animation: rotate-hue linear 500ms infinite;
+    animation-play-state: paused;
    }
    
-   button:hover span:nth-child(4) {
-    bottom: 100%;
-    transition: 0.7s;
-    transition-delay: 0.52s;
+   button:hover::after {
+    animation-play-state: running;
+   }
+   
+   @keyframes rotate-hue {
+    to {
+     filter: hue-rotate(1turn);
+    }
+   }
+   
+   button,
+   button::after {
+    box-sizing: border-box;
    }
    
    button:active {
-    background: #ae00af;
-    background: linear-gradient(to top right, #ae00af, #001eff);
-    color: #bfbfbf;
-    box-shadow: 0 0 8px #ae00ff, 0 0 8px #001eff, 0 0 8px #ae00ff;
-    transition: 0.1s;
+    --border-width: 5px;
    }
-   
-   button:active span:nth-child(1) 
-   span:nth-child(2) 
-   span:nth-child(2) 
-   span:nth-child(2) {
-    transition: none;
-    transition-delay: none;
-   }
-   
