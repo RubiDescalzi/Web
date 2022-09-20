@@ -1,3 +1,4 @@
 body {
-    background-color: blueviolet;
+    background: linear-gradient(to right, #000000, hsl(0, 81%, 17%));
+    text-align: center;
 }
