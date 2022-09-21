@@ -1,77 +1,56 @@
 
 /* Color a toda la pagina*/ 
 
-body {
-    background-color: #330055;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 1000'%3E%3Cg %3E%3Ccircle fill='%23330055' cx='50' cy='0' r='50'/%3E%3Cg fill='%233e095b' %3E%3Ccircle cx='0' cy='50' r='50'/%3E%3Ccircle cx='100' cy='50' r='50'/%3E%3C/g%3E%3Ccircle fill='%23491362' cx='50' cy='100' r='50'/%3E%3Cg fill='%23541d68' %3E%3Ccircle cx='0' cy='150' r='50'/%3E%3Ccircle cx='100' cy='150' r='50'/%3E%3C/g%3E%3Ccircle fill='%235f266e' cx='50' cy='200' r='50'/%3E%3Cg fill='%23692f75' %3E%3Ccircle cx='0' cy='250' r='50'/%3E%3Ccircle cx='100' cy='250' r='50'/%3E%3C/g%3E%3Ccircle fill='%2374387c' cx='50' cy='300' r='50'/%3E%3Cg fill='%237e4282' %3E%3Ccircle cx='0' cy='350' r='50'/%3E%3Ccircle cx='100' cy='350' r='50'/%3E%3C/g%3E%3Ccircle fill='%23894b89' cx='50' cy='400' r='50'/%3E%3Cg fill='%23935590' %3E%3Ccircle cx='0' cy='450' r='50'/%3E%3Ccircle cx='100' cy='450' r='50'/%3E%3C/g%3E%3Ccircle fill='%239d5f97' cx='50' cy='500' r='50'/%3E%3Cg fill='%23a7699f' %3E%3Ccircle cx='0' cy='550' r='50'/%3E%3Ccircle cx='100' cy='550' r='50'/%3E%3C/g%3E%3Ccircle fill='%23b173a6' cx='50' cy='600' r='50'/%3E%3Cg fill='%23bb7dad' %3E%3Ccircle cx='0' cy='650' r='50'/%3E%3Ccircle cx='100' cy='650' r='50'/%3E%3C/g%3E%3Ccircle fill='%23c587b5' cx='50' cy='700' r='50'/%3E%3Cg fill='%23cf92bd' %3E%3Ccircle cx='0' cy='750' r='50'/%3E%3Ccircle cx='100' cy='750' r='50'/%3E%3C/g%3E%3Ccircle fill='%23d99cc5' cx='50' cy='800' r='50'/%3E%3Cg fill='%23e2a7cd' %3E%3Ccircle cx='0' cy='850' r='50'/%3E%3Ccircle cx='100' cy='850' r='50'/%3E%3C/g%3E%3Ccircle fill='%23ecb2d5' cx='50' cy='900' r='50'/%3E%3Cg fill='%23f5bddd' %3E%3Ccircle cx='0' cy='950' r='50'/%3E%3Ccircle cx='100' cy='950' r='50'/%3E%3C/g%3E%3Ccircle fill='%23FFC8E6' cx='50' cy='1000' r='50'/%3E%3C/g%3E%3C/svg%3E");
-    background-attachment: fixed;
-    background-size: contain;
-    text-align: center;
-}
-
-/* From uiverse.io by @ShadowShahriar */
-button {
-    --border-radius: 15px;
-    --border-width: 4px;
-    appearance: none;
-    position: relative;
-    padding: 1em 2em;
-    border: 0;
-    background-color: #212121;
-    font-family: "Roboto", Arial, "Segoe UI", sans-serif;
-    font-size: 18px;
-    font-weight: 500;
-    color: #fff;
-    z-index: 2;
-   }
-   
-   button::after {
-    --m-i: linear-gradient(#000, #000);
-    --m-o: content-box, padding-box;
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
+html{
     width: 100%;
     height: 100%;
-    padding: var(--border-width);
-    border-radius: var(--border-radius);
-    background-image: conic-gradient(
-           #488cfb,
-           #29dbbc,
-           #ddf505,
-           #ff9f0e,
-           #e440bb,
-           #655adc,
-           #488cfb
-       );
-    -webkit-mask-image: var(--m-i), var(--m-i);
-    mask-image: var(--m-i), var(--m-i);
-    -webkit-mask-origin: var(--m-o);
-    mask-origin: var(--m-o);
-    -webkit-mask-clip: var(--m-o);
-    mask-composite: exclude;
-    -webkit-mask-composite: destination-out;
-    filter: hue-rotate(0);
-    animation: rotate-hue linear 500ms infinite;
-    animation-play-state: paused;
-   }
-   
-   button:hover::after {
-    animation-play-state: running;
-   }
-   
-   @keyframes rotate-hue {
-    to {
-     filter: hue-rotate(1turn);
+    display: inline-flex;
+    background: linear-gradient(#D352EA, #E48792)
+}
+
+svg{
+    position:absolute;
+    width: 500px;
+    height: 400px;
+}
+
+.conteiner{
+    position: relative;
+    width: 400px;
+    height: 400px;
+    margin: auto;
+}
+
+.line{
+    --colorA: #65F3DD;
+    fill: none;
+    stroke-width: 10;
+    stroke-linejoin: round;
+    stroke-linecap: round;
+    stroke: #fff;
+    stroke-dasharray: 328 600;
+    animation: rotate 2s infinite linear;
+
+    filter: 
+    drop-shadow(0 0 2px var(--colorA))
+    drop-shadow(0 0 5px var(--colorA))
+    drop-shadow(0 0 10px var(--colorA))
+    drop-shadow(0 0 15px var(--colorA))
+    drop-shadow(0 0 25px var(--colorA))
+}
+
+.line2 {
+    animation: rotate 2s infinite --1s linear;
+    --colorA: #F598F0;
+}
+
+@keyframes rotate {
+    0% {
+        stroke-dashoffset: 0;
     }
-   }
-   
-   button,
-   button::after {
-    box-sizing: border-box;
-   }
-   
-   button:active {
-    --border-width: 5px;
-   }
+    100% {
+        stroke-dashoffset: -600;
+    }
+}
+
+
